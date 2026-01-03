@@ -1,7 +1,5 @@
 import React from 'react'
 function Home() {
-
-
     const style = {
         padding: "10px",
         margin: "5px",
@@ -18,9 +16,14 @@ function Home() {
                     <button style={style} className='bg[#8b5cf6]'>Login</button>
                 </div>
             </div>
-            <div className='w-full h-140 bg-[#1b2537]'>
-
-            </div>
+            <section className='w-full h-140 bg-[#1b2537] flex justify-center items-center'>
+                <div>
+                    <h1 className='text-[3.5rem] text-white text-center'>Book Your Game <br />Own the Turf</h1>
+                     <p className="text-[1.2rem] text-white text-center w-[600px]" >
+                        Premium sports venues for Football, Cricket, and Pickleball. Instant booking, zero hassle.
+                    </p>
+                </div>
+            </section>
         </>
     )
 }
