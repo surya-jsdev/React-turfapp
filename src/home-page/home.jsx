@@ -20,7 +20,7 @@ function Home() {
             <section className='w-full h-160 bg-[#1b2537] flex justify-center items-center'>
                 <div className='flex justify-center flex-wrap w-xl'>
                     <h1 className='text-[3.5rem] text-white text-center'>Book Your Game <br />Own the Turf</h1>
-                     <p className="text-[1.2rem] text-white text-center w-[600px] text-[#7b90a8]" >
+                    <p className="text-[1.2rem] text-white text-center w-[600px] text-[#7b90a8]" >
                         Premium sports venues for Football, Cricket, and Pickleball. Instant booking, zero hassle.
                     </p>
                     <button className='mt-4 text-white bg-[#8b5cf6] p-3 rounded-xl'>
@@ -28,9 +28,19 @@ function Home() {
                     </button>
                 </div>
             </section>
-            <section>
-                <div>
-                   
+            <section className='py-16 bg-[#0f172a]'>
+                <div className='max-w-5xl mx-auto px-4 flex flex-wrap justify-center'>
+                    {turf.map((t) => (
+                        <div key={t.id} className='max-w-sm bg-[#0b1220] m-4 p-4 rounded-xl text-white shadow-lg'>
+                            <img src={t.image} alt={t.name} className='w-full h-40 object-cover rounded-md' />
+                            <h3 className='mt-2 font-bold text-lg'>{t.name}</h3>
+                            <p className='text-sm text-[#9aa6b7]'>{t.location} • {t.sport}</p>
+                            <div className='mt-3 flex justify-between items-center'>
+                                <span className='font-semibold'>₹{t.price}</span>
+                                <span className='text-yellow-400'>{t.rating} ★</span>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
         </>

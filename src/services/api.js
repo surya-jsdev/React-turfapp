@@ -24,4 +24,21 @@ export const turf = [{
     price: 800,
     rating: 4.7,
 },
-]
+{
+    id: 4,
+    name: "Spin Kings Arena",
+    sport: "Cricket",
+    image: "https://images.unsplash.com/photo-1593341646261-284774810978?auto=format&fit=crop&q=80&w=800",
+    location: "North Avenue",
+    price: 900,
+    rating: 4.2,
+},
+{
+    id: 5,
+    name: "Smash Pickleball Court",
+    sport: "Pickleball",
+    image: "https://images.unsplash.com/photo-1626248316335-58d044238721?auto=format&fit=crop&q=80&w=800",
+    location: "City Center",
+    price: 1500,
+    rating: 4.9,
+}];
