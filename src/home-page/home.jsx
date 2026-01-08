@@ -31,7 +31,7 @@ function Home() {
             <section className='py-16 bg-[#0f172a]'>
                 <div className='max-w-5xl mx-auto px-4 flex flex-wrap justify-center'>
                     {turf.map((t) => (
-                        <div key={t.id} className='max-w-sm bg-[#0b1220] m-4 p-4 rounded-xl text-white shadow-lg'>
+                        <div key={t.id} className='max-w-sm bg-[#0b1220] m-4 p-4 rounded-xl text-white shadow-lg cursor-pointer'>
                             <img src={t.image} alt={t.name} className='w-full h-40 object-cover rounded-md' />
                             <h3 className='mt-2 font-bold text-lg'>{t.name}</h3>
                             <p className='text-sm text-[#9aa6b7]'>{t.location} • {t.sport}</p>
