@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Login() {
+    const [name, setName] = useState("");
 
     const style = {
         width: "100%",
@@ -10,17 +11,28 @@ function Login() {
     return (
         <>
             <div style={style} className='flex justify-center items-center '>
-                <form action="" className='rounded-xl w-sm bg-white h-[45vh] p-4'>
-                    <h1 className='text-center text-2xl'>LOGIN</h1>
-                    <div>
-                        <label htmlFor="email" className='block py-2 text-white'>Email:</label>
-                        <input type="text" name="email" id="" placeholder='Enter Email...' className='border-black border-[2px] py-2 w-xs rounded-xl' />
+                <form action="" className='rounded-xl w-[400px] bg-[#192436] h-[60vh] p-6 flex flex-col items-center'>
+                    <div className='mt-9'>
+                        <h1 className='text-center text-xl font-bold text-white'>Welcome Back</h1>
+                        <p className='text-[#91a0b5] text-center m-4'>Enter your credentials to access your account</p>
                     </div>
                     <div>
-                        <label htmlFor="password" className='block py-2  text-white'>Password:</label>
-                        <input type="text" name="email" id="" placeholder='Enter Password...' className='border-black border-[2px] py-2 w-xs rounded-xl' />
+
+                        <label htmlFor="email" className='block py-4 text-[#91a0b5] self-start'>Email Address</label>
+                        <input type="text" name="email" id="" placeholder='name@example.com' className='border-black border-[2px] py-2 w-xs rounded-xl bg-[#0f172a] placeholder: text-white p-2 text-sm' autoComplete='off' />
                     </div>
+
+                    <div>
+
+                        <label htmlFor="password" className='block py-4 text-[#91a0b5] self-start'>Password</label>
+                        <input type="text" name="email" id="" placeholder='Enter Your Password' className='border-black border-[2px] py-2 w-xs rounded-xl bg-[#0f172a] placeholder: text-white p-2 text-sm' autoComplete='off' />
+                    </div>
+
                     <button className='py-3 bg-[#8b5cf6] w-xs mt-5 text-white rounded-xl' >Login</button>
+
+                    <div className='mt-8 text-white'>
+                        <p >Don't have an account?</p>
+                    </div>
                 </form>
             </div>
         </>
