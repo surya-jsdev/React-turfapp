@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Login() {
-    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
 
     const style = {
         width: "100%",
@@ -11,7 +15,7 @@ function Login() {
     return (
         <>
             <div style={style} className='flex justify-center items-center '>
-                <form action="" className='rounded-xl w-[400px] bg-[#192436] h-[60vh] p-6 flex flex-col items-center'>
+                <form action="" className='rounded-xl w-[400px] bg-[#192436] h-auto p-6 flex flex-col items-center'>
                     <div className='mt-9'>
                         <h1 className='text-center text-xl font-bold text-white'>Welcome Back</h1>
                         <p className='text-[#91a0b5] text-center m-4'>Enter your credentials to access your account</p>
