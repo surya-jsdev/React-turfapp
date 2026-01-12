@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { turf } from '../services/api'
 function Home() {
+    const navigate = useNavigate()
     const style = {
         padding: "10px",
         margin: "5px",
@@ -9,12 +11,12 @@ function Home() {
         borderRadius: "10px",
     }
     return (
-        <>
+        <>/
             <div className='p-5  w-full flex justify-between bg-[#0f172a] border-b-1 border-[#253144] fixed'>
                 <h2 className='text-white text-[1.5em] font-bold'><span className='text-[#8257e7] p-2'>ROGER</span>ACADEMY</h2>
                 <div className=''>
-                    <button style={style}>Signup</button>
-                    <button style={style} className='bg-[#8b5cf6] w-[100px]'>Login</button>
+                    <button style={style} onClick={() => navigate('/signup')}>Signup</button>
+                    <button style={style} className='bg-[#8b5cf6] w-[100px]' onClick={() => navigate('/login')}>Login</button>
                 </div>
             </div>
             <section className='w-full h-160 bg-[#1b2537] flex justify-center items-center'>
@@ -29,7 +31,7 @@ function Home() {
                 </div>
             </section>
             <section className='py-16 bg-[#0f172a]'>
-                <div className='max-w-5xl mx-auto px-4 flex flex-wrap justify-center'>
+                <div className='max-w-6xl mx-auto px-4 flex flex-wrap justify-center'>
                     {turf.map((t) => (
                         <div key={t.id} className='max-w-sm bg-[#0b1220] m-4 p-4 rounded-xl text-white shadow-lg cursor-pointer'>
                             <img src={t.image} alt={t.name} className='w-full h-40 object-cover rounded-md' />
