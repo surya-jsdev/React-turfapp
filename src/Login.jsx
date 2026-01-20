@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
-function Login() {
+function handleLogin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
-  
+
     const style = {
         width: "100%",
         height: "100vh",
         backgroundColor: "#0f172af0",
+    }
+    const handleEmail=(e)=>{
+        setEmail(e.target.value)
+    }
+    const handlepassword=(e)=>{
+        setPassword(e.target.value)
     }
     return (
         <>
@@ -19,18 +25,14 @@ function Login() {
                         <p className='text-[#91a0b5] text-center m-4'>Enter your credentials to access your account</p>
                     </div>
                     <div>
-
                         <label htmlFor="email" className='block py-4 text-[#91a0b5] self-start'>Email Address</label>
-                        <input type="text" name="email" id="" placeholder='name@example.com' className='border-black border-[2px] py-2 w-xs rounded-xl bg-[#0f172a] placeholder: text-white p-2 text-sm' autoComplete='off' />
+                        <input type="text" value={email} onChange={handleEmail} name="email" id="" placeholder='name@example.com' className='border-black border-[2px] py-2 w-xs rounded-xl bg-[#0f172a] placeholder: text-white p-2 text-sm' autoComplete='off' />
                     </div>
-
                     <div>
-
                         <label htmlFor="password" className='block py-4 text-[#91a0b5] self-start'>Password</label>
-                        <input type="text" name="email" id="" placeholder='Enter Your Password' className='border-black border-[2px] py-2 w-xs rounded-xl bg-[#0f172a] placeholder: text-white p-2 text-sm' autoComplete='off' />
+                        <input type="text" value={password} onChange={handlepassword} name="email" id="" placeholder='Enter Your Password' className='border-black border-[2px] py-2 w-xs rounded-xl bg-[#0f172a] placeholder: text-white p-2 text-sm' autoComplete='off' />
                     </div>
-
-                    <button className='py-3 bg-[#8b5cf6] w-xs mt-5 text-white rounded-xl' >Login</button>
+                    <button className='py-3 bg-[#8b5cf6] w-xs mt-5 text-white rounded-xl' onClick={handleLogin}>Login</button>
 
                     <div className='mt-8 text-white'>
                         <p >Don't have an account?</p>
