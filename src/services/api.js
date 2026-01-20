@@ -42,3 +42,15 @@ export const turf = [{
     price: 1500,
     rating: 4.9,
 }];
+
+
+export const timeslot = [
+    "06:00 AM - 07:00 AM",
+    "07:00 AM - 08:00 AM",
+    "08:00 AM - 09:00 AM",
+    "04:00 PM - 05:00 PM",
+    "05:00 PM - 06:00 PM",
+    "06:00 PM - 07:00 PM",
+    "07:00 PM - 08:00 PM",
+    "08:00 PM - 09:00 PM",
+];
