@@ -1,4 +1,5 @@
 import React from 'react'
+import { ArrowRight } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { turf } from '../services/api'
 function Home() {
@@ -25,13 +26,14 @@ function Home() {
                     <p className="text-[1.2rem] text-white text-center w-[600px] text-[#7b90a8]" >
                         Premium sports venues for Football, Cricket, and Pickleball. Instant booking, zero hassle.
                     </p>
-                    <button className='mt-4 text-white bg-[#8b5cf6] p-3 rounded-xl'>
-                        Explore Venues
+                    <button className='mt-4 flex text-white bg-[#8b5cf6] p-3 rounded-xl'>
+                        Explore Venues <ArrowRight size={24} className="ml-1" />
                     </button>
                 </div>
             </section>
             <section className='py-16 bg-[#0f172a]'>
-                <div className='max-w-6xl mx-auto px-4 flex flex-wrap justify-center'>
+                <div className='min-w-4xl mx-auto px-4 flex flex-wrap justify-center'>
+                    {/* <div><h2>Our games</h2></div> */}
                     {turf.map((t) => (
                         <div key={t.id} className='max-w-sm bg-[#0b1220] m-4 p-4 rounded-xl text-white shadow-lg cursor-pointer'>
                             <img src={t.image} alt={t.name} className='w-full h-40 object-cover rounded-md' />
