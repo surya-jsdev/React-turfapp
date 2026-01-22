@@ -22,7 +22,7 @@ function Login() {
                     <div>
                         <label htmlFor="email" className='block py-4 text-[#91a0b5] self-start'>Email Address</label>
                         <input type="text"
-    
+                            value={email}
                             name="email"
                             id="" placeholder='name@example.com'
                             className='border-black border-[2px] py-2 w-xs rounded-xl bg-[#0f172a] placeholder: text-white p-2 text-sm' autoComplete='off' />
@@ -30,7 +30,7 @@ function Login() {
                     <div>
                         <label htmlFor="password" className='block py-4 text-[#91a0b5] self-start'>Password</label>
                         <input type="text"
-                           
+                           value={password}
                             name="email" id=""
                             placeholder='Enter Your Password'
                             className='border-black border-[2px] py-2 w-xs rounded-xl bg-[#0f172a] placeholder: text-white p-2 text-sm' autoComplete='off' />
