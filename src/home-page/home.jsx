@@ -5,6 +5,7 @@ import { turf } from '../services/api'
 function Home() {
     const navigate = useNavigate()
     const style = {
+        
         padding: "10px",
         margin: "5px",
         color: "white",
