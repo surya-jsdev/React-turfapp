@@ -21,7 +21,7 @@ function Home() {
                     <button style={style} className='bg-[#8b5cf6] w-[100px]' onClick={() => navigate('/login')}>Login</button>
                 </div>
             </div>
-            <section className='w-full h-160 bg-[#1b2537] flex justify-center items-center'>
+            <section className='w-full h-[80vh] bg-[#1b2537] flex justify-center items-center'>
                 <div className='flex justify-center flex-wrap w-xl'>
                     <h1 className='text-[3.5rem] text-white text-center'>Book Your Game <br />Own the Turf</h1>
                     <p className="text-[1.2rem] text-white text-center w-[600px] text-[#7b90a8]" >

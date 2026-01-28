@@ -8,6 +8,7 @@ function Signup() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+
     const style = {
         width: "100%",
         height: "100vh",
@@ -36,7 +37,7 @@ function Signup() {
                     </div>
 
                     <button className='py-2 bg-[#8b5cf6] w-xs mt-8 text-white rounded-xl' >SignUp</button>
-
+                    {error && <p className='text-red-500 text-sm mt-4 w-full text-center'>{error}</p>}
                     <div className='mt-8 text-white'>
                         <p>Already have an account?</p>
                     </div>

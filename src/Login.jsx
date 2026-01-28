@@ -18,13 +18,9 @@ function Login() {
             setLoading(false);
             return;
         }
-
         try {
-            // Simulate API call
             console.log("Logging in...", { email, password });
             await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            // Success
             navigate('/');
         } catch (err) {
             setError("Login failed. Please try again.");
@@ -47,9 +43,6 @@ function Login() {
                         <h1 className='text-center text-xl font-bold text-white'>Welcome Back</h1>
                         <p className='text-[#91a0b5] text-center m-4'>Enter your credentials to access your account</p>
                     </div>
-                    
-                   
-
                     <div className="w-full">
                         <label htmlFor="email" className='block py-4 text-[#91a0b5] self-start'>Email Address</label>
                         <input type="email"
