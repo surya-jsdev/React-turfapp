@@ -19,9 +19,15 @@ function Login() {
             return;
         }
         try {
-            console.log("Logging in...", { email, password });
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            navigate('/');
+            const response = await fetch("https://68a582352a3deed2960dbd2c.mockapi.io/form/name");
+            const users = await response.json();
+            const user = users.find((u) => u.email === email && u.newpassword === password)
+            // await new Promise(resolve => setTimeout(resolve, 1000));
+            if (user) {
+                navigate('/');
+            } else {
+                setError("Invalid email or password")
+            }
         } catch (err) {
             setError("Login failed. Please try again.");
         } finally {
@@ -34,7 +40,7 @@ function Login() {
         height: "100vh",
         backgroundColor: "#0f172af0",
     }
-  
+
     return (
         <>
             <div style={style} className='flex justify-center items-center '>
@@ -49,20 +55,20 @@ function Login() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             name="email"
-                            id="email" 
+                            id="email"
                             placeholder='name@example.com'
                             className='border-black border-[2px] py-2 w-full rounded-xl bg-[#0f172a] placeholder:text-white p-2 text-sm text-white' autoComplete='off' />
                     </div>
                     <div className="w-full">
                         <label htmlFor="password" className='block py-4 text-[#91a0b5] self-start'>Password</label>
                         <input type="password"
-                           value={password}
-                           onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             name="password" id="password"
                             placeholder='Enter Your Password'
                             className='border-black border-[2px] py-2 w-full rounded-xl bg-[#0f172a] placeholder:text-white p-2 text-sm text-white' autoComplete='off' />
                     </div>
-                     {error && <div className='text-red-500 text-sm mt-4 w-full text-center'>{error}</div>}
+                    {error && <div className='text-red-500 text-sm mt-4 w-full text-center'>{error}</div>}
                     <button disabled={loading} className='py-3 bg-[#8b5cf6] w-full mt-5 text-white rounded-xl hover:bg-[#7c3aed] transition-colors disabled:opacity-50'>{loading ? 'Logging in...' : 'Login'}</button>
 
                     <div className='mt-8 text-white flex gap-2'>

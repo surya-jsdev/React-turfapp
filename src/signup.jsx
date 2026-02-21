@@ -35,9 +35,7 @@ function Signup() {
 
         try {
             console.log("Signing up...", { name, email, password });
-            // Simulate API call
             await new Promise(resolve => setTimeout(resolve, 1000));
-            // On success, navigate to home or login
             navigate('/Login');
         } catch (err) {
             setError("Signup failed. Please try again.");
