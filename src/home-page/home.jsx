@@ -1,9 +1,11 @@
-import React from 'react'
+
 import { ArrowRight } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { turf } from '../services/api'
+
 function Home() {
     const navigate = useNavigate()
+
     const style = {
         padding: "10px",
         margin: "5px",
@@ -13,7 +15,7 @@ function Home() {
     }
     return (
         <>
-            <div className='p-5  w-full flex justify-between bg-[#0f172a] border-b-1 border-[#253144] fixed'>
+            <div className='sm:w-sm p-5 md:w-full flex justify-between bg-[#0f172a] border-b-1 border-[#253144] fixed'>
                 <h2 className='text-white text-[1.5em] font-bold'><span className='text-[#8257e7] p-2'>ROGER</span>ACADEMY</h2>
                 <div className=''>
                     <button style={style} onClick={() => navigate('/signup')} className="btn">Signup</button>
@@ -32,10 +34,10 @@ function Home() {
                 </div>
             </section>
             <section className='py-16 bg-[#0f172a]'>
-                <div className='min-w-4xl mx-auto px-4 flex flex-wrap justify-center'>
+                <div className='sm:flex sm:flex-col min-w-4xl mx-auto px-4 md:flex-row md:flex-wrap justify-center'>
                     {/* <div className=''><h2>Our games</h2></div> */}
                     {turf.map((t) => (
-                        <div key={t.id} className='max-w-sm bg-[#0b1220] m-4 p-4 rounded-xl text-white shadow-lg cursor-pointer'>
+                        <div key={t.id} className='max-w-sm bg-[#0b1220]  m-4 p-4 rounded-xl text-white shadow-lg cursor-pointer' onClick={() => navigate('/Slot-Booking')}>
                             <img src={t.image} alt={t.name} className='w-full h-40 object-cover rounded-md' />
                             <h3 className='mt-2 font-bold text-lg'>{t.name}</h3>
                             <p className='text-sm text-[#9aa6b7]'>{t.location} • {t.sport}</p>
