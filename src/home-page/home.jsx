@@ -2,8 +2,7 @@
 import { ArrowRight } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { turf } from '../services/api'
-import {Link} from 'react-router-dom'
-import SlotBooking from '../SlotBooking'
+import { Link } from 'react-router-dom'
 
 function Home() {
     const navigate = useNavigate()
@@ -17,7 +16,7 @@ function Home() {
     }
     return (
         <>
-            <div className='sm:w-sm p-3 md:w-full flex justify-around bg-[#0f172a] border-b-1 border-[#253144] fixed'>
+            <div className='sm:w-sm p-3 md:w-full flex justify-between bg-[#0f172a] border-b-1 border-[#253144] fixed'>
                 <h2 className='text-white text-[1.5em] font-bold'><span className='text-[#8257e7] p-2'>ROGER</span>ACADEMY</h2>
                 <div className=''>
                     <button style={style} onClick={() => navigate('/signup')} className="btn">Signup</button>
@@ -47,7 +46,7 @@ function Home() {
                                 <span className='font-semibold'>₹{t.price}</span>
                                 <span className='text-yellow-400'>{t.rating} ★</span>
                             </div>
-                            <Link to={`/SlotBooking/${t.id}`} className="" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem',border:"1px solid white",position:"absolute",right:"20px",margin:"8px", }}>
+                            <Link to={`/SlotBooking/${t.id}`} state={{ image: t.image, name: t.name }} className="btn" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem', border: "1px solid white", position: "absolute", right: "20px", margin: "8px", background: " rgba(219, 30, 181, 0.74)", borderRadius: "10px" }}>
                                 Book Now
                             </Link>
                         </div>
