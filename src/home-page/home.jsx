@@ -46,8 +46,8 @@ function Home() {
                                 <span className='font-semibold'>₹{t.price}</span>
                                 <span className='text-yellow-400'>{t.rating} ★</span>
                             </div>
-                            <Link to={`/SlotBooking/${t.id}`} state={{ image: t.image, name: t.name }} className="btn" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem', border: "1px solid white", position: "absolute", right: "20px", margin: "8px", background: " rgba(219, 30, 181, 0.74)", borderRadius: "10px" }}>
-                                Book Now
+                            <Link to={`/SlotBooking/${t.id}`} state={{ image: t.image, name: t.name }} className="btn" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem', border: "1px solid white", position: "absolute", right: "20px",margin: "8px", background: " rgba(219, 30, 181, 0.74)", borderRadius: "10px" }}>
+                                Book Now 
                             </Link>
                         </div>
                     ))}

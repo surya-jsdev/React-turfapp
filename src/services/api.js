@@ -36,12 +36,15 @@ export const turf = [{
 
 
 export const timeslot = [
-    "06:00 AM - 07:00 AM",
-    "07:00 AM - 08:00 AM",
-    "08:00 AM - 09:00 AM",
-    "04:00 PM - 05:00 PM",
-    "05:00 PM - 06:00 PM",
-    "06:00 PM - 07:00 PM",
-    "07:00 PM - 08:00 PM",
-    "08:00 PM - 09:00 PM",
+    { id: 1, timeslot: "06:00 AM - 07:00 AM" },
+    { id: 2, timeslot: "07:00 AM - 08:00 AM" },
+    { id: 3, timeslot: "08:00 AM - 09:00 AM" },
+    { id: 4, timeslot: "04:00 PM - 05:00 PM" },
+    { id: 5, timeslot: "05:00 PM - 06:00 PM" },
+    { id: 6, timeslot: "06:00 PM - 07:00 PM" },
+    { id: 7, timeslot: "07:00 PM - 08:00 PM" },
+    { id: 8, timeslot: "08:00 PM - 09:00 PM" },
+
 ];
+
+// export const date = new date();

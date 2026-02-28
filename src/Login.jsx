@@ -21,7 +21,7 @@ function Login() {
         try {
             const response = await fetch("https://68a582352a3deed2960dbd2c.mockapi.io/form/name");
             const users = await response.json();
-            const user = users.find((u) => u.email === email && u.newpassword === password)
+            const user = users.find((u) => u.email === email && u.password === password)
       
             if (user) {
                 localStorage.setItem("user", JSON.stringify(user));

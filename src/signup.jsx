@@ -3,47 +3,72 @@ import { useNavigate, Link } from 'react-router-dom';
 
 function Signup() {
     const navigate = useNavigate();
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [data, setData] = useState({
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    })
+    const { name, email, password, confirmPassword } = data;
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
-
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+    };
     const handleSignup = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError("");
 
-        if (!name || !email || !password || !confirmPassword) {
-            setError("Please fill in all fields");
-            setLoading(false);
-            return;
-        }
+        // if (!data.name || !data.email || !data.password || !data.confirmPassword) {
+        //     setError("Please fill in all fields");
+        //     setLoading(false);
+        //     return;
+        // }
 
-        if (password !== confirmPassword) {
+        if (data.password !== data.confirmPassword) {
             setError("Passwords do not match");
             setLoading(false);
             return;
         }
 
-        if (password.length < 6) {
+        if (data.password.length < 6) {
             setError("Password must be at least 6 characters long");
             setLoading(false);
             return;
         }
-
+        if (!data.email === email) {
+            setError("Email Already exist")
+            setLoading(false);
+            return
+        }
         try {
-            console.log("Signing up...", { name, email, password });
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            navigate('/Login');
+            const response = await fetch("https://68a582352a3deed2960dbd2c.mockapi.io/form/name", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to signup");
+            }
+
+            const result = await response.json();
+            console.log(result);
+            navigate('/login');
+
         } catch (err) {
             setError("Signup failed. Please try again.");
         } finally {
             setLoading(false);
         }
-    };
-
+    }
     const style = {
         width: "100%",
         height: "100vh",
@@ -62,7 +87,7 @@ function Signup() {
                     <input
                         type="text"
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={handleChange}
                         name="name"
                         id="name"
                         placeholder='Enter your name'
@@ -76,7 +101,7 @@ function Signup() {
                     <input
                         type="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={handleChange}
                         name="email"
                         id="email"
                         placeholder='name@example.com'
@@ -90,7 +115,7 @@ function Signup() {
                     <input
                         type="password"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={handleChange}
                         name="password"
                         id="password"
                         placeholder='Create Password'
@@ -104,7 +129,7 @@ function Signup() {
                     <input
                         type="password"
                         value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        onChange={handleChange}
                         name="confirmPassword"
                         id="confirmPassword"
                         placeholder='Confirm Password'
