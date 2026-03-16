@@ -17,7 +17,7 @@ function SlotBooking() {
           {timeslot.map((slot, index) => (
             <div
               key={index}
-              className="p-3 border rounded-lg text-center cursor-pointer hover:bg-blue-500 hover:text-white transition"
+              className="p-4 border rounded-lg text-center text-white cursor-pointer w-xs hover:bg-blue-500 hover:text-white transition"
             >
               {slot.timeslot}
             </div>
