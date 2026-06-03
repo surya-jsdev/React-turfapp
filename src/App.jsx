@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import Home from './home-page/home.jsx'
-import Login from './Login.jsx'
-import Signup from './signup.jsx'
-import SlotBooking from './SlotBooking.jsx'
+import Login from './components/Login.jsx'
+import Signup from './components/signup.jsx'
+import SlotBooking from './components/SlotBooking.jsx'
 
 function App() {
   return (

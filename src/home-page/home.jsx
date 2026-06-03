@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { turf } from '../services/api'
+import { turf } from '../services/api.js'
 import { Link } from 'react-router-dom'
 import Footer from "../components/Footer.jsx";
 
