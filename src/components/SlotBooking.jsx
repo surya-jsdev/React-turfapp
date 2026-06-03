@@ -1,6 +1,6 @@
 
 import { useParams, useLocation } from 'react-router-dom'
-import { timeslot } from './services/api'
+import { timeslot } from '../services/api'
 function SlotBooking() {
   const { id } = useParams()
   const location = useLocation()

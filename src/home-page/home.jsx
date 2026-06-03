@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { turf } from '../services/api'
 import { Link } from 'react-router-dom'
-import Footer from '../footer.jsx'  // Updated path to point to src\footer.jsx
+import Footer from "../components/Footer.jsx";
 
 function Home() {
     const navigate = useNavigate()
