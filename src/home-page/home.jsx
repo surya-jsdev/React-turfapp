@@ -38,7 +38,7 @@ function Home() {
                 <div className='sm:flex sm:flex-col min-w-4xl mx-auto px-4 md:flex-row md:flex-wrap justify-center'>
                     {/* <div className=''><h2>Our games</h2></div> */}
                     {turf.map((t) => (
-                        <div key={t.id} className='max-w-sm bg-[#0b1220] h-[320px] m-4 p-4 rounded-xl text-white shadow-lg cursor-pointer relative'>
+                        <div key={t.id} className='max-w-sm h-[350px] bg-[#0b1220] m-4 p-6 rounded-xl text-white shadow-lg cursor-pointer relative'>
                             <img src={t.image} alt={t.name} className='w-full h-40 object-cover rounded-md' />
                             <h3 className='mt-2 font-bold text-lg'>{t.name}</h3>
                             <p className='text-sm text-[#9aa6b7]'>{t.location} • {t.sport}</p>
@@ -46,8 +46,8 @@ function Home() {
                                 <span className='font-semibold'>₹{t.price}</span>
                                 <span className='text-yellow-400'>{t.rating} ★</span>
                             </div>
-                            <Link to={`/SlotBooking/${t.id}`} state={{ image: t.image, name: t.name }} className="btn" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem', border: "1px solid white", position: "absolute", right: "0px", margin: "8px 10px", background: " #6f38eea0", borderRadius: "10px" }}>
-                                Book Now
+                            <Link to={`/SlotBooking/${t.id}`} state={{ image: t.image, name: t.name }} className="btn" style={{  display: 'flex',padding: '0.5rem 1rem 0.5rem 1rem', fontSize: '0.9rem', border: "1px solid white", position: "absolute", right: "0px", margin: "10px 10px 5px", background: " #6f38eea0", borderRadius: "10px" }}>
+                                Book Now <ArrowRight style={{margin:'0 0 0 0.5em'}}/>
                             </Link>
                         </div>
                     ))}

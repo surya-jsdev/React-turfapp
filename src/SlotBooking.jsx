@@ -13,7 +13,7 @@ function SlotBooking() {
         <p className="text-sm text-gray-400">Selected turf id: {id}</p>
         <img src={image} alt={name} className='w-xs h-40 cover rounded-md' />
 
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-4 mt-10">
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-4 mt-10 ">
           {timeslot.map((slot, index) => (
             <div
               key={index}
