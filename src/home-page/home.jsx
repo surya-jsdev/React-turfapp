@@ -16,8 +16,14 @@ function Home() {
     }
     return (
         <>
-            <div className='sm:w-sm p-3 md:w-full flex justify-between bg-[#0f172a] border-b-1 border-[#253144] fixed'>
-                <h2 className='text-white text-[1.5em] font-bold'><span className='text-[#8257e7] p-2'>ROGER</span>ACADEMY</h2>
+            <div className='sm:w-sm p-3 md:w-full flex justify-evenly bg-[#0f172a] border-b-1 border-[#253144] fixed'>
+                <h2 className='text-white text-[1.5em] font-bold'><span className='text-[#8257e7] p-2'>360°</span>TURF ACADEMY</h2>
+                <div className='w-xl flex m-3 text-[#8257e7] text-[1.2rem] font-[700]'>
+                    <Link to='/' className='Navlink'>HOME</Link>
+                    <Link to='/MyBooking' className='Navlink'>MYBOOKING</Link>
+                    <Link to='/MyBooking' className='Navlink'>ABOUTUS</Link>
+                    <Link to='/MyBooking' className='Navlink'>CONTACTUS</Link>
+                </div>
                 <div className=''>
                     <button style={style} onClick={() => navigate('/signup')} className="btn">Signup</button>
                     <button style={style} className='bg-[#8b5cf6] w-[100px]' onClick={() => navigate('/login')}>Login</button>

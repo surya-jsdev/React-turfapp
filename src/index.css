@@ -1,8 +1,21 @@
-
-body{
-  background-color: rgb(13, 15, 47);
+body {
+  background-color: #0d0f2f;
 }
 
-@media  (min-width:768px) {
-
+.Navlink {
+  padding: 0px 0px 0px 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
 }
+
+.Navlink:hover {
+  color: rgb(103, 11, 222);
+}
+
+@media (min-width:768px) {}
